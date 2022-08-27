@@ -1,0 +1,24 @@
+{
+  "name": "reactwebpack",
+  "version": "1.0.0",
+  "description": "Estudio de react con webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JUAN-BH/reactWebpack.git"
+  },
+  "keywords": [],
+  "author": "Juan Manuel Becerra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JUAN-BH/reactWebpack/issues"
+  },
+  "homepage": "https://github.com/JUAN-BH/reactWebpack#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
