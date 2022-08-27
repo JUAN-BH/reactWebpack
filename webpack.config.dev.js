@@ -2,24 +2,16 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
-    publicPath: "/",
-    clean: true,
   },
-  mode: "production",
+  mode: "development",
   resolve: {
     extensions: [".js", ".jsx"],
-    alias: {
-      "@components": patch.resolve(__dirname, "src/components/"),
-      "@styles": patch.resolve(__dirname, "src/styles/"),
-    },
   },
   module: {
     rules: [
@@ -51,8 +43,15 @@ module.exports = {
       filename: "[name].css",
     }),
   ],
-  optimization: {
-    minimize: true,
-    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+      watch: true,
+    },
+    watchFiles: path.join(__dirname, "./**"),
+    compress: true,
+    historyApiFallback: true,
+    port: 3008,
+    open: true,
   },
 };
